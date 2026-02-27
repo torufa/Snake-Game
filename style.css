@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+:root{
+    /* background color */
+    --bg-primary-color : #111;
+    --bg-tranparency-color : #11111138;
+    --bg-fill-color: #E2E8CE;
+    --bg-food-color: #FF7F11;
+
+    /* text color */
+    --text-primary-color: #f3f3f3;
+
+    /* spacing variables */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 40px;
+    --space-3xl: 48px;
+
+    /* border colors */
+    --border-primary-color: #333;
+
+    /* border radius */
+    --border-radius-xs: 4px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --border-radius-xl: 32px;
+    --border-radius-2xl: 40px;
+}
+html{
+    background-color: var(--bg-primary-color);
+    color: var(--text-primary-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.btn{
+    padding: var(--space-sm) var(--space-lg);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all ease 0.3s;
+    font-size: 2vw;
+}
+.btn:hover{
+    box-shadow: 0px 1px 60px #ff8225f2;
+    transform: scale(1.1);
+    background: #ff8225f2;
+    color: white;
+}
+.main, section{
+    width: 100%;
+    height: 100%;
+}
+section{
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+}
+section .infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.info{
+    border: 1px solid var(--border-primary-color);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-sm) var(--space-md);
+}
+
+section .board{
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(60px, 1fr));
+}
+
+.board .block{
+    border: 1px solid var(--border-primary-color)
+}
+.board .fill{
+    background-color: var(--bg-fill-color);
+}
+.board .food{
+    background-color: var(--bg-food-color);
+    box-shadow: 0px 1px 20px #FF7F11;
+    border: none;
+}
+.modal{
+    background: var(--bg-transparency-color);
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(6px);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+}
+.modal .start-game,
+.modal .game-over {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 3vh;
+}
+.modal .game-over{
+    display: none;
+}
